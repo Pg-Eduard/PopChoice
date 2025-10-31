@@ -1,0 +1,55 @@
+.main_page {
+    min-height: 650px;
+    min-width: 400px;
+
+    background-color: #000C36;
+    color: white;
+
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+.title > h1 {
+    margin-top: 0;
+}
+
+.title > svg {
+    width: 100px;
+    height: 100px;
+
+    color: rgb(217, 164, 65);
+}
+
+form > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+    margin-bottom: 2rem;
+
+    text-align: left;
+}
+
+form > div > textarea {
+    background-color: #3B4877;
+    border: none;
+    border-radius: 10px;
+
+    min-height: 80px;
+    resize: none;
+    color: white;
+
+    padding: 10px;
+}
+
+form > div > input {
+    background-color: #51E08A;
+    border: none;
+    border-radius: 10px;
+
+    min-height: 80px;
+    color: black;
+
+    font-weight: bold;
+    font-size:larger;
+}
