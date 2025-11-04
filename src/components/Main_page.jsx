@@ -6,6 +6,43 @@ import "../styles/main.css"
 
 export default function Main_page() {
     const [formSubmitted,setFormSubmitted] = useState(false)
+    const [noPeople, setNoPeople] = useState(1)
+    const [preferences, setPreferences] = useState([{}])
+    const [answers,setAnswers] = useState({
+        "1st": "",
+        "2nd": "",
+        "3rd": ""
+    })
+    const [movieData, setMovieData] = useState({
+        movie_title: "",
+        movie_description: ""
+    })
+
+    function handleChange(e) {
+        const { name, value } = e.target;
+        setAnswers(prev => ({ ...prev, [name]: value })); // <-- paranteze pătrate!
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault()
+        setFormSubmitted(true)
+        // aiPrompt(answers["1st"], answers["2nd"], answers["3rd"])
+    }
+
+    async function aiPrompt(noPeople,preferences) {
+        console.log("Beggining prompting!")
+
+        for (const i= 1; i < noPeople; i++){
+
+        }
+
+        const response = await agent(prompt)
+        
+        setMovieData({
+            movie_title: response.movie_title,
+            movie_description: response.movie_description
+        })
+    }
 
     const body = (
         <section className="main_page">
@@ -15,32 +52,27 @@ export default function Main_page() {
             </div>
 
             {!formSubmitted && 
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div>
-                    <label for="1st">What's your favourite movie and why?</label>
-                    <textarea type="text" name="1st" id="1st" />
+                    <textarea placeholder="How many people?"></textarea>
                 </div>
-
                 <div>
-                    <label for="2nd">Are you in the mood for something new or a classic?</label>
-                    <textarea type="text" name="2nd" id="2nd" />
+                    <textarea placeholder="How much time do you have?"></textarea>
                 </div>
-
                 <div>
-                    <label for="3rd">Do you wanna have fun or do you want something serious?</label>
-                    <textarea type="text" name="3rd" id="3rd" />
-                </div>
-
-                <div>
-                    <input type="submit" value="Let's GO!" />
+                    <input type="submit" value="NEXT" />
                 </div>
             </form>}
 
-            {formSubmitted && 
+            {
+                formSubmitted && <Questionair />
+            }
+
+            {/* {formSubmitted && 
             <div>
-                <h1 className="movie_title"></h1>
-                <h2 className="movie_description"></h2>
-            </div>}
+                <h1 id="movie_title" className="movie_title">{movieData.movie_title}</h1>
+                <h2 id="movie_description" className="movie_description">{movieData.movie_description}</h2>
+            </div>} */}
 
         </section>
     )

@@ -1,6 +1,8 @@
 .main_page {
     min-height: 650px;
     min-width: 400px;
+    max-height: 800px;
+    max-width: 400px;
 
     background-color: #000C36;
     color: white;
@@ -35,11 +37,13 @@ form > div > textarea {
     border: none;
     border-radius: 10px;
 
-    min-height: 80px;
+    max-height: 20px;
     resize: none;
     color: white;
 
     padding: 10px;
+
+    text-align: center;
 }
 
 form > div > input {
