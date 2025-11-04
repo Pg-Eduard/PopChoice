@@ -22,9 +22,12 @@ export default async function ask_AI(prompt) {
                     and find one appropiate movie to recommandation to them. Also, there may be more
                     then one person's preferences states, you must take into account all of the people's
                     prefrences and recomand a movie.
+                    Also be more descriptive, and show the user why you came to that conclusion based
+                    on everyone's preferences.
                     You will ALWAYS reply ONLY in JSON format with the following structure:
                     {movie_title: z.string().min(1, "Title is required"),
-                    movie_description: z.string().min(1, "Description is required")}`
+                    movie_description: z.string().min(1, "Description is required"),
+                    reasoning: z.string().describe("Why did you recommend this?")}`
         },
         {
             role: "user",

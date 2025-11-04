@@ -2,7 +2,7 @@
     min-height: 650px;
     min-width: 400px;
     max-height: 800px;
-    max-width: 400px;
+    max-width: 600px;
 
     background-color: #000C36;
     color: white;
@@ -37,7 +37,7 @@ form > div > textarea {
     border: none;
     border-radius: 10px;
 
-    max-height: 20px;
+    max-height: 80px;
     resize: none;
     color: white;
 
@@ -56,4 +56,8 @@ form > div > input {
 
     font-weight: bold;
     font-size:larger;
+}
+
+.recommandation {
+    word-wrap: break-word;
 }
